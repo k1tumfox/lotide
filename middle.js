@@ -9,7 +9,7 @@ const eqArrays = function(array1, array2) {
 };
 
 const assertArraysEqual = function(a1, a2) {
-  console.log(eqArrays(a1, a2));
+  return eqArrays(a1, a2);
 };
 
 
@@ -29,8 +29,8 @@ const middle = function(array) {
   return middleMost;
 };
 
-/* let x = [1, 2, 3, 4, 5, 6];
-console.log(middle(x)); */
-//console.log("1 element gives blank array", assertArraysEqual([7], middle([1, 7, 3])));
+let x = [1, 2, 3, 4, 5, 6];
+console.log(middle(x));
+console.log("1 element gives blank array", assertArraysEqual([7], middle([1, 7, 3])));
 
 
