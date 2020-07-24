@@ -8,7 +8,7 @@ const map = function(array, callback) {
   }
 
   return results;
-}
+};
 
 //testing functions
 const eqArrays = function(array1, array2) {
@@ -19,7 +19,7 @@ const eqArrays = function(array1, array2) {
     }
   }
   return matchIndicator;//true or false
-}
+};
 
 const assertArraysEqual = function(a1, a2) {
   console.log(eqArrays(a1, a2));
@@ -30,10 +30,10 @@ const results1 = map(words, word => word[0]);
 console.log(results1); */
 
 const jumble = ['all', 'I', 'ever', 'wanted'];
-console.log(map(jumble, jumb => jumb[jumb.length-1]));
+console.log(map(jumble, jumb => jumb[jumb.length - 1]));
 //output: ['l', 'I', 'r', 'd']
 console.log('------');
-assertArraysEqual(['l', 'I', 'r', 'd'], map(jumble, jumb => jumb[jumb.length-1]));
+assertArraysEqual(['l', 'I', 'r', 'd'], map(jumble, jumb => jumb[jumb.length - 1]));
 
 const numble = [1,5,8,7];
 console.log(map(numble, numb => numb * 3));
