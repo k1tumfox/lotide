@@ -11,6 +11,10 @@ const takeUntil = function(array, callback) {
           //It should keep going until callback/predicate returns a truthy value.
 }
 
+/* const data1 = [1,2,5,7,2,-1,2,4,5];
+const results1 = takeUntil(data1, x => x < 0);
+console.log(results1); */
+
 //testing functions
 const eqArrays = function(array1, array2) {
   let matchIndicator = true;
