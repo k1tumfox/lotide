@@ -3,13 +3,15 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(array1, array2) {
-  let matchIndicator = true;
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
+  if (array1.length === array2.length) {
+    for (let i = 0; i < array1.length; i++) {
+      if (array1[i] !== array2[i]) {
+        return false;
+      }
     }
+    return true;
   }
-  return matchIndicator;//true or false
+  return false;//true or false
 };
 //test eqArrays
 /* const c = ["2", 3, 'apple'];
@@ -18,8 +20,12 @@ console.log(eqArrays(d, c)); */
 
 const eqObjects = function(obj1, obj2) { //determines if object are equal, same keys, same values
   //same number of keys
-  let array1 = Object.keys(obj1);
-  let array2 = Object.keys(obj2);
+  let array1 = Object.keys(obj1); // [c, d[]]
+  let array2 = Object.keys(obj2); // [d[], c
+
+  if (array1.length !== array2.length) {
+    return false;
+  }
   
   if (array1.length === array2.length) { //confirms objects have same # of keys
     for (let ele of array1) {
@@ -27,25 +33,16 @@ const eqObjects = function(obj1, obj2) { //determines if object are equal, same 
         if (!eqArrays(obj1[ele], obj2[ele])) { //compares the arrays of both objects,
           return false;
         }
-
       }
-      if (obj1[ele] !== obj2[ele]) {
+      else if (obj1[ele] !== obj2[ele]) {
         return false;
       }
-            
     }
     return true;
   }
-  //here>>>
-  //result1 = true; //if both obj have identical keys with identical values
-  //result1 = false;//otherwise
-  return false;
 };
 
-
-
-////////////
-/* const ab = { a: "1", b: "2" };
+const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 console.log(eqObjects(ab, ba)); // => true
 assertEqual(eqObjects(ab, ba), true);
@@ -58,18 +55,14 @@ assertEqual(eqObjects(ab, abc), false);
 
 console.log("----------------------");
 console.log("----------------------");
-*/
-//////******
+
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 assertEqual(eqObjects(cd, dc), true);
-// console.log(Array.isArray(cd['d']));
-// console.log(Array.isArray(dc['d']));
 
-/*
+
 console.log("----------------------");
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); */
-///////
+assertEqual(eqObjects(cd, cd2), false); 
 
