@@ -1,6 +1,10 @@
+const assert = require('chai').assert;
 const middle = require('../middle');
 const assertArraysEqual = require('../assertArraysEqual');
 
-let x = [1, 2, 3, 4, 5, 6];
-console.log(middle(x));
-console.log("1 element gives blank array", assertArraysEqual([7], middle([1, 7, 3])));
+describe("#middle", () => {
+  it('should equal array of 7 when given 1,7,3', () => {
+    assert.deepEqual(middle([1, 7, 3]), [7]);
+
+  });
+});
