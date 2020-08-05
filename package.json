@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@k1tumfox/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "clone library of lodash for learning purposes",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/k1tumfox/lotide.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tenyson Kwon",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/k1tumfox/lotide/issues"
