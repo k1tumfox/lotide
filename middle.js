@@ -1,17 +1,3 @@
-const eqArrays = function(array1, array2) {
-  let matchIndicator = true;
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return matchIndicator;//true or false
-};
-
-const assertArraysEqual = function(a1, a2) {
-  return eqArrays(a1, a2);
-};
-
 
 const middle = function(array) {
   let middleMost = [];//could be 1 or 2 values
@@ -29,8 +15,5 @@ const middle = function(array) {
   return middleMost;
 };
 
-let x = [1, 2, 3, 4, 5, 6];
-console.log(middle(x));
-console.log("1 element gives blank array", assertArraysEqual([7], middle([1, 7, 3])));
 
-
+module.exports = middle;
